@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unternehmen – Optimum Bahnsicherheit</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+  .about-main { position: relative; z-index: 2; padding: 80px; }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-bottom: 80px; align-items: center; }
+  .about-text p { font-size: 16px; color: var(--grey); line-height: 1.9; margin-bottom: 20px; }
+
+  /* Values */
+  .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 60px; margin-bottom: 80px; }
+  .value-card { background: var(--bg-card); border: 1px solid var(--border); padding: 40px 32px; transition: border-color 0.2s; }
+  .value-card:hover { border-color: var(--border-bright); }
+  .value-icon { font-size: 32px; margin-bottom: 16px; }
+  .value-title { font-family: 'Orbitron', sans-serif; font-size: 14px; font-weight: 700; color: var(--cyan); letter-spacing: 1px; margin-bottom: 12px; }
+  .value-desc { font-size: 14px; color: var(--grey); line-height: 1.8; }
+
+  /* Team */
+  .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 60px; }
+  .team-card { background: var(--bg-card); border: 1px solid var(--border); padding: 32px 24px; text-align: center; transition: all 0.2s; }
+  .team-card:hover { border-color: var(--border-bright); }
+  .team-avatar { width: 72px; height: 72px; border-radius: 50%; border: 2px solid var(--cyan-dim); background: var(--steel); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 28px; }
+  .team-name { font-family: 'Orbitron', sans-serif; font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+  .team-role { font-size: 12px; color: var(--cyan-dim); letter-spacing: 1px; text-transform: uppercase; }
+
+  /* Refs */
+  .refs { position: relative; z-index: 2; padding: 0 80px 80px; }
+  .refs-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; margin-top: 40px; }
+  .ref-box { border: 1px solid var(--border); padding: 28px 20px; display: flex; align-items: center; justify-content: center; background: var(--bg-card); transition: all 0.2s; cursor: pointer; }
+  .ref-box:hover { border-color: var(--border-bright); background: var(--steel); }
+  .ref-name { font-family: 'Orbitron', sans-serif; font-size: 11px; color: var(--grey-dark); letter-spacing: 2px; font-weight: 700; transition: color 0.2s; }
+  .ref-box:hover .ref-name { color: var(--cyan); }
+
+  /* Timeline */
+  .timeline { margin-top: 60px; display: flex; flex-direction: column; gap: 0; }
+  .tl-item { display: grid; grid-template-columns: 100px 1fr; gap: 24px; padding: 32px 0; border-bottom: 1px solid var(--border); }
+  .tl-year { font-family: 'Orbitron', sans-serif; font-size: 20px; font-weight: 900; color: var(--cyan); line-height: 1.2; }
+  .tl-content-title { font-family: 'Orbitron', sans-serif; font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+  .tl-content-desc { font-size: 14px; color: var(--grey); line-height: 1.7; }
+
+  @media (max-width: 900px) {
+    .about-main { padding: 40px 24px; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .values-grid { grid-template-columns: 1fr; }
+    .team-grid { grid-template-columns: 1fr 1fr; }
+    .refs { padding: 0 24px 60px; }
+    .refs-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="logo-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="1.5"><path d="M2 18L6 6h12l4 12"/><path d="M6 18h12"/><path d="M9 10h6"/><circle cx="8" cy="18" r="1.5" fill="#00d4ff"/><circle cx="16" cy="18" r="1.5" fill="#00d4ff"/></svg></div>
+    <div class="logo-text"><span class="logo-top">OPTIMUM</span><span class="logo-bottom">Bahnsicherheit</span></div>
+  </a>
+  <button class="nav-mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+  <ul class="nav-links">
+    <li><a href="index.html">Start</a></li>
+    <li><a href="leistungen.html">Leistungen</a></li>
+    <li><a href="technologie.html">Technologie</a></li>
+    <li><a href="unternehmen.html" class="active">Unternehmen</a></li>
+    <li><a href="kontakt.html" class="nav-cta">Kontakt</a></li>
+  </ul>
+</nav>
+
+<div class="page-content">
+  <div class="page-hero">
+    <div class="page-hero-badge">ÜBER UNS</div>
+    <h1>Das <span>Unternehmen</span></h1>
+    <p>Seit über 18 Jahren Spezialist für bahnbetriebliche Sicherheit — verlässlich, zertifiziert und zukunftsorientiert.</p>
+  </div>
+
+  <div class="ticker">
+    <div class="ticker-inner">
+      <span class="ticker-item">18+ Jahre Erfahrung <span class="ticker-sep">◆</span></span>
+      <span class="ticker-item">340+ Projekte <span class="ticker-sep">◆</span></span>
+      <span class="ticker-item">Bundesweit tätig <span class="ticker-sep">◆</span></span>
+      <span class="ticker-item">Zertifiziert nach EBO <span class="ticker-sep">◆</span></span>
+      <span class="ticker-item">SIL 4 <span class="ticker-sep">◆</span></span>
+      <span class="ticker-item">ISO 9001 <span class="ticker-sep">◆</span></span>
+      <span class="ticker-item">18+ Jahre Erfahrung <span class="ticker-sep">◆</span></span>
+      <span class="ticker-item">340+ Projekte <span class="ticker-sep">◆</span></span>
+      <span class="ticker-item">Bundesweit tätig <span class="ticker-sep">◆</span></span>
+      <span class="ticker-item">Zertifiziert nach EBO <span class="ticker-sep">◆</span></span>
+      <span class="ticker-item">SIL 4 <span class="ticker-sep">◆</span></span>
+      <span class="ticker-item">ISO 9001 <span class="ticker-sep">◆</span></span>
+    </div>
+  </div>
+
+  <section class="about-main">
+    <!-- ABOUT TEXT + TIMELINE -->
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="section-label">Wir über uns</div>
+        <h2 class="section-title">Kompetenz<br>mit System</h2>
+        <p>Optimum Bahnsicherheit GmbH ist ein spezialisiertes Unternehmen für bahnbetriebliche Sicherheitssysteme mit Sitz in Deutschland. Wir planen, installieren und warten Sicherungsanlagen für den Schienenverkehr — von Bahnübergängen bis zu komplexen Streckensicherungen.</p>
+        <p>Unser Team aus zertifizierten Ingenieuren, Elektrotechnikern und Signaltechnikern arbeitet nach den höchsten Sicherheitsstandards. Jedes Projekt wird von der ersten Beratung bis zur Abnahme von uns begleitet.</p>
+        <p>Wir sind stolz darauf, in über 18 Jahren mehr als 340 Projekte erfolgreich realisiert zu haben — ohne einen einzigen sicherheitsrelevanten Vorfall.</p>
+        <a href="kontakt.html" class="btn-primary" style="margin-top:24px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          Jetzt Kontakt aufnehmen
+        </a>
+      </div>
+      <div>
+        <div class="section-label">Meilensteine</div>
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-year">2006</div><div><div class="tl-content-title">Gründung</div><div class="tl-content-desc">Gründung der Optimum Bahnsicherheit GmbH mit Fokus auf ATWS-Anlagen.</div></div></div>
+          <div class="tl-item"><div class="tl-year">2010</div><div><div class="tl-content-title">ISO-Zertifizierung</div><div class="tl-content-desc">Erfolgreiche ISO 9001 Zertifizierung und Erweiterung auf Streckensicherung.</div></div></div>
+          <div class="tl-item"><div class="tl-year">2016</div><div><div class="tl-content-title">SIL 4 Zertifizierung</div><div class="tl-content-desc">Erreichen der höchsten Sicherheitsintegritätsstufe SIL 4 nach IEC 61508.</div></div></div>
+          <div class="tl-item"><div class="tl-year">2022</div><div><div class="tl-content-title">Digitale Plattform</div><div class="tl-content-desc">Launch der eigenen Fernwirk- und Monitoring-Plattform OBS-Connect.</div></div></div>
+          <div class="tl-item"><div class="tl-year">2026</div><div><div class="tl-content-title">KI-Integration</div><div class="tl-content-desc">Einführung KI-gestützter Predictive Maintenance für alle Bestandsanlagen.</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VALUES -->
+    <div class="section-label">Unsere Werte</div>
+    <h2 class="section-title">Was uns antreibt</h2>
+    <div class="values-grid">
+      <div class="value-card"><div class="value-icon">🎯</div><div class="value-title">Präzision</div><div class="value-desc">Jede Anlage, jede Schraube, jede Prüfung — wir arbeiten präzise und lassen keine Kompromisse bei der Sicherheit zu.</div></div>
+      <div class="value-card"><div class="value-icon">🔗</div><div class="value-title">Verlässlichkeit</div><div class="value-desc">Unsere Kunden können sich auf uns verlassen — bei der Planung, der Ausführung und im 24/7-Notfalldienst.</div></div>
+      <div class="value-card"><div class="value-icon">🚀</div><div class="value-title">Innovation</div><div class="value-desc">Wir verbinden bewährte Bahntechnik mit modernster Digitaltechnologie — für die Bahnsicherheit der Zukunft.</div></div>
+    </div>
+
+    <!-- TEAM -->
+    <div class="section-label">Team</div>
+    <h2 class="section-title">Unsere Experten</h2>
+    <div class="team-grid">
+      <div class="team-card"><div class="team-avatar">👨‍💼</div><div class="team-name">Max Mustermann</div><div class="team-role">Geschäftsführer</div></div>
+      <div class="team-card"><div class="team-avatar">👨‍🔧</div><div class="team-name">Klaus Weber</div><div class="team-role">Leiter Technik</div></div>
+      <div class="team-card"><div class="team-avatar">👩‍💻</div><div class="team-name">Sandra Müller</div><div class="team-role">Digitale Systeme</div></div>
+      <div class="team-card"><div class="team-avatar">👨‍🏭</div><div class="team-name">Thomas Bauer</div><div class="team-role">Projektleitung</div></div>
+    </div>
+  </section>
+
+  <!-- REFERENCES -->
+  <section class="refs">
+    <div class="section-label">Referenzen</div>
+    <h2 class="section-title">Unsere Partner</h2>
+    <div class="refs-grid">
+      <div class="ref-box"><span class="ref-name">DB NETZ AG</span></div>
+      <div class="ref-box"><span class="ref-name">DB InfraGO</span></div>
+      <div class="ref-box"><span class="ref-name">BASF SE</span></div>
+      <div class="ref-box"><span class="ref-name">LANXESS</span></div>
+      <div class="ref-box"><span class="ref-name">RHENUS</span></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="index.html" class="nav-logo"><div class="logo-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="1.5"><path d="M2 18L6 6h12l4 12"/><path d="M6 18h12"/><path d="M9 10h6"/><circle cx="8" cy="18" r="1.5" fill="#00d4ff"/><circle cx="16" cy="18" r="1.5" fill="#00d4ff"/></svg></div><div class="logo-text"><span class="logo-top">OPTIMUM</span><span class="logo-bottom">Bahnsicherheit</span></div></a><p>Zertifizierter Spezialist für bahnbetriebliche Sicherheitssysteme.</p></div>
+      <div class="footer-col"><h4>Leistungen</h4><ul><li><a href="leistungen.html">ATWS-Sicherung</a></li><li><a href="leistungen.html">Streckenabsicherung</a></li><li><a href="leistungen.html">Fernwirktechnik</a></li></ul></div>
+      <div class="footer-col"><h4>Unternehmen</h4><ul><li><a href="unternehmen.html">Über uns</a></li><li><a href="unternehmen.html">Referenzen</a></li><li><a href="technologie.html">Technologie</a></li></ul></div>
+      <div class="footer-col"><h4>Rechtliches</h4><ul><li><a href="#">Impressum</a></li><li><a href="#">Datenschutz</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Optimum Bahnsicherheit GmbH — <span>Alle Rechte vorbehalten</span></p><p style="font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--grey-dark);">SYS-ID: <span style="color:var(--cyan-dim);">OBS-WEB-4.2.1</span></p></div>
+  </footer>
+</div>
+
+<div class="wa-widget">
+  <div class="wa-popup" id="waPopup">
+    <button class="wa-close" onclick="toggleWA()">✕</button>
+    <div class="wa-popup-header"><div class="wa-avatar">🚂</div><div class="wa-header-text"><strong>Optimum Bahnsicherheit</strong><span><span class="wa-status-dot"></span> Online</span></div></div>
+    <div class="wa-chat-area"><div class="wa-bubble">Hallo! 👋 Möchten Sie mehr über uns erfahren? Schreiben Sie uns!<span class="wa-bubble-time">Heute, 08:00 Uhr</span></div></div>
+    <div class="wa-input-area"><input class="wa-input" type="text" placeholder="Ihre Nachricht ..." id="waInput" onkeydown="if(event.key==='Enter')sendWA()"><button class="wa-send" onclick="sendWA()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2" fill="white" stroke="none"/></svg></button></div>
+  </div>
+  <button class="wa-btn" onclick="toggleWA()"><svg width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></button>
+</div>
+<script>
+function toggleWA() { document.getElementById('waPopup').classList.toggle('open'); }
+function sendWA() { const i=document.getElementById('waInput'); const m=i.value.trim(); if(!m)return; window.open(`https://wa.me/49YOURPHONENUMBER?text=${encodeURIComponent(m)}`,'_blank'); i.value=''; }
+</script>
+</body>
+</html>
